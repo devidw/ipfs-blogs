@@ -3,9 +3,9 @@
 A list of decentralized blogs running on https://ipfs.io[IPFS].
 
 |===
-| Blog | `https://` | `ipns://`
+| Blog | `ipns://` | `https://`
 
 | Teetotality
-| https://teetotality.blog
 | ipns://teetotality.blog
+| https://teetotality.blog
 |===
