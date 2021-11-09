@@ -1,0 +1,11 @@
+= Interplanetary Blogs
+
+A list of decentralized blogs running on https://ipfs.io[IPFS].
+
+|===
+| Blog | `https://` | `ipns://`
+
+| Teetotality
+| https://teetotality.blog
+| ipns://teetotality.blog
+|===
