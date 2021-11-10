@@ -1,10 +1,19 @@
 = Interplanetary Blogs
+:table-caption!:
 
 A list of decentralized blogs running on https://ipfs.io[IPFS]:
 
 // table gets inserted here
+.Online statuses as of 2021-11-10
 |===
-|Name |Domain
+|Name |Domain |Online?
 
-|Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog]
+|Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog]|✅
 |===
+
+== Contribution
+You host a blog on https://ipfs.io[IPFS] or know of a decentralized blog missing here? Feel free to add it to `ipfs-blogs.csv`!
+
+The table is generated from the `ipfs-blogs.csv` file. If you want to add a new blog to the table, you need to update the `ipfs-blogs.csv` file. 
+
+Threfore you need to run `build.py` to update the table. But that's not required for sending a pull request. If you don't run the build script it will be executed by someone else.
