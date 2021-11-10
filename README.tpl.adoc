@@ -3,8 +3,4 @@
 A list of decentralized blogs running on https://ipfs.io[IPFS]:
 
 // table gets inserted here
-|===
-|Name |Domain
-
-|Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog]
-|===
+%s
