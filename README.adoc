@@ -1,6 +1,6 @@
 = Interplanetary Blogs
 
-A list of decentralized blogs running on https://ipfs.io[IPFS].
+A list of decentralized blogs running on https://ipfs.io[IPFS]:
 
 |===
 | Blog | `ipns://` | `https://`
