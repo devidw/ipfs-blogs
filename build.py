@@ -5,17 +5,18 @@ import os
 
 
 class IpfsBlogs:
-    def __init__(self, file_in, file_out_tpl, file_out) -> None:
-        self.file_in = file_in
-        self.file_out_tpl = file_out_tpl
-        self.file_out = file_out
+    def __init__(self, file_in_csv, file_out_adoc_tpl, file_out_adoc, file_out_html) -> None:
+        self.file_in_csv = file_in_csv
+        self.file_out_adoc_tpl = file_out_adoc_tpl
+        self.file_out_adoc = file_out_adoc
+        self.file_out_html = file_out_html
         self.set_csv()
         # self.get_adoc_table()
         self.write_adoc_table()
         self.write_html()
 
     def set_csv(self):
-        self.blogs = DictReader(open(self.file_in))
+        self.blogs = DictReader(open(self.file_in_csv))
 
     def is_online(self, url):
         try:
@@ -43,17 +44,18 @@ class IpfsBlogs:
         return adoc_table % (today, adoc_rows)
 
     def write_adoc_table(self):
-        with open(self.file_out_tpl, 'r') as f:
+        with open(self.file_out_adoc_tpl, 'r') as f:
             tpl = f.read()
-        with open(self.file_out, 'w') as f:
+        with open(self.file_out_adoc, 'w') as f:
             f.write(tpl % self.get_adoc_table())
 
     def write_html(self):
-        os.system(f'asciidoctor -o index.html {self.file_out}')
+        os.system(f'asciidoctor -o {self.file_out_html} {self.file_out_adoc}')
 
 
 ipfs_blogs = IpfsBlogs(
-    file_in='ipfs-blogs.csv',
-    file_out_tpl='README.tpl.adoc',
-    file_out='README.adoc',
+    file_in_csv='ipfs-blogs.csv',
+    file_out_adoc_tpl='README.tpl.adoc',
+    file_out_adoc='README.adoc',
+    file_out_html='index.html',
 )
