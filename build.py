@@ -37,7 +37,7 @@ class IpfsBlogs:
             name = blog['Name']
             domain = blog['Domain']
             url = f'https://ipfs.io/ipns/{domain}'
-            link = f'link:{url}[{domain}]'
+            link = f'link:{url}[{domain}, window="_blank"]'
             online = self.is_online(url)
             adoc_rows += f'|{name}|{link}|{online}\n'
         today = datetime.today().strftime('%Y-%m-%d')

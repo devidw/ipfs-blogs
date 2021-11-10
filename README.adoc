@@ -8,7 +8,7 @@ A list of decentralized blogs running on https://ipfs.io[IPFS]:
 |===
 |Name |Domain |Online?
 
-|Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog]|✅
+|Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog, window="_blank"]|✅
 |===
 
 == Contribution
