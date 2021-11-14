@@ -6,6 +6,12 @@ import os
 
 class IpfsBlogs:
     def __init__(self, file_in_csv, file_out_adoc_tpl, file_out_adoc, file_out_html) -> None:
+        self.status_emojis = {
+            200: '✅',
+            404: '❌',
+            # None: '❌',
+            408: '⌛',
+        }
         self.file_in_csv = file_in_csv
         self.file_out_adoc_tpl = file_out_adoc_tpl
         self.file_out_adoc = file_out_adoc
@@ -18,20 +24,19 @@ class IpfsBlogs:
     def set_csv(self):
         self.blogs = DictReader(open(self.file_in_csv))
 
-    def is_online(self, url):
+    def get_status_code(self, url):
         try:
-            request = requests.get(url, timeout=1)
-            if request.ok:
-                return '✅'
-            else:
-                return f'❌ {request.status_code}'
+            website = requests.get(url, timeout=1)
+            return website.status_code
+            # if website.ok:
         except:
-            return '❌'
+            # 
+            return 408 # 408: Request Timeout
 
     def get_adoc_table(self):
         adoc_table = ('.Online statuses as of %s\n'
                       '|===\n'
-                      '|Name |Domain |Online?\n\n'
+                      '|Name |Domain |Online? |Status Code\n\n'
                       '%s'
                       '|===')
         # print(adoc_table)
@@ -41,8 +46,9 @@ class IpfsBlogs:
             domain = blog['Domain']
             url = f'https://ipfs.io/ipns/{domain}'
             link = f'link:{url}[{domain}, window="_blank"]'
-            online = self.is_online(url)
-            adoc_rows += f'|{name}|{link}|{online}\n'
+            status_code = self.get_status_code(url)
+            online = self.status_emojis[status_code]
+            adoc_rows += f'|{name}|{link}|{online}|{status_code}\n'
         today = datetime.today().strftime('%Y-%m-%d')
         return adoc_table % (today, adoc_rows)
 
