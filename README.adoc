@@ -4,13 +4,17 @@
 A list of decentralized blogs running on https://ipfs.io[IPFS]:
 
 // table gets inserted here
-.Online statuses as of 2021-11-10
+.Online statuses as of 2021-11-14
 |===
 |Name |Domain |Online?
 
 |IPFS Blog & News|link:https://ipfs.io/ipns/blog.ipfs.io[blog.ipfs.io, window="_blank"]|✅
 |Teetotality|link:https://ipfs.io/ipns/teetotality.blog[teetotality.blog, window="_blank"]|✅
 |Gokberk Yaltirakli|link:https://ipfs.io/ipns/gkbrk.com[gkbrk.com, window="_blank"]|❌
+|With Blue Ink|link:https://ipfs.io/ipns/withblue.ink[withblue.ink, window="_blank"]|❌ 404
+|Rüdiger's Blog|link:https://ipfs.io/ipns/blog.klaehn.org[blog.klaehn.org, window="_blank"]|❌
+|push32dup2|link:https://ipfs.io/ipns/push32.com[push32.com, window="_blank"]|✅
+|ronan.eth|link:https://ipfs.io/ipns/ronan.eth.link[ronan.eth.link, window="_blank"]|❌
 |===
 
 == Contribution

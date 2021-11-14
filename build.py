@@ -1,7 +1,7 @@
 from csv import DictReader
 from datetime import datetime
 import requests
-import os 
+import os
 
 
 class IpfsBlogs:
@@ -20,8 +20,11 @@ class IpfsBlogs:
 
     def is_online(self, url):
         try:
-            requests.get(url, timeout=1)
-            return '✅'
+            request = requests.get(url, timeout=1)
+            if request.ok:
+                return '✅'
+            else:
+                return f'❌ {request.status_code}'
         except:
             return '❌'
 
